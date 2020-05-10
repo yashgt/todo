@@ -1,0 +1,11 @@
+<p>To Do List</p>
+
+<button [routerLink]="['new']">New To Do</button>
+<table border="1">
+    <tr *ngFor="let t of todoList">
+        <td><a [routerLink]="[t.id]" >{{t.name}}</a></td>
+        <td ><button (click)="done(t.id)">Done</button></td>
+    </tr>
+</table>
+<!--How to get the routes to be outlet here rather than on the app.component.html?-->
+<router-outlet></router-outlet>
